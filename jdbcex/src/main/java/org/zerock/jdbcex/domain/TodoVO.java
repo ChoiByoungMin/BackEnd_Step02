@@ -1,8 +1,6 @@
 package org.zerock.jdbcex.domain;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -22,6 +20,8 @@ https://inpa.tistory.com/entry/GOF-%F0%9F%92%A0-%EB%B9%8C%EB%8D%94Builder-%ED%8C
 @Getter             // getter 메서드 no usages
 @Builder            // 빌더 패턴, 생성자 초기화이지만 마치 필드 초기화
 @ToString           // 필드 정보 보기
+@NoArgsConstructor  // 매개변수 없는 생성자
+@AllArgsConstructor // 모든 필드 생성자        ModelMapper로 Dto <-> Vo변환
 public class TodoVO {
     private  Long tno;
     private  String title;

@@ -18,7 +18,7 @@ public class TodoReadController extends HttpServlet {
 
         System.out.println("/todo/read");
 
-        // /todo/read?tno=123
+
         Long tno = Long.parseLong(req.getParameter("tno"));
 
         TodoDTO dto = TodoService.INSTANCE.get(tno);
