@@ -25,6 +25,6 @@ public class TodoReadController extends HttpServlet {
 
         req.setAttribute("dto", dto);
 
-        req.getRequestDispatcher("WEB-INF/todo/read.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/todo/read.jsp").forward(req, resp);
     }
 }
