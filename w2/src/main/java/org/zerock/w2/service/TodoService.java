@@ -1,13 +1,12 @@
-package org.zerock.jdbcex.service;
+package org.zerock.w2.service;
 
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
-import org.zerock.jdbcex.dao.TodoDAO;
-import org.zerock.jdbcex.domain.TodoVO;
-import org.zerock.jdbcex.dto.TodoDTO;
-import org.zerock.jdbcex.util.MapperUtil;
+import org.zerock.w2.dao.TodoDAO;
+import org.zerock.w2.domain.TodoVO;
+import org.zerock.w2.dto.TodoDTO;
+import org.zerock.w2.util.MapperUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
