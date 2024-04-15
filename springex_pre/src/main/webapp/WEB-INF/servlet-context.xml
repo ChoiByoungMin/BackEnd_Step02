@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    스프링 mvc설정을 어노테이션 기반으로 처리한다-->
+<!--    스프링 mvc와 관련된 여러 객체를 자동으로 Bean으로 등록한다-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+<!--    html,css,js 이미지와 같은 정적 파일의 경로-->
+<!--    스프링  mvc 에서 별도로 처리하지 않는다.-->
+    <mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
+
+<!--    주소 요청이 FrontController에 들어 왔을 때, 처리가 끝나고 View이동해야 하는데-->
+<!--    주소의 앞에 prefix를 주소의 뒤에 suffix를 붙여서 jsp의 경로를 결정한다-->
+<!--    /hello라는 요청이 들어오면, 이주소와 매핑된page controller의 메서드가 처리하고-->
+<!--    /web-inf/views/hello.jsp로 이동시킨다-->
+<!--    외부에서 jsp의 경로를 알 수 없도록 내부에서 경로를 정해ㅂ주는 것이다-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+<!--    아래 패키지의 하위를 모두 scan해서 어노테이션 설정되어 있는 것을 bean으로 로딩해라-->
+    <context:component-scan base-package="org.zerock.springex.controller"/>
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="org.zerock.springex.controller.formatter.LocalDateFormatter"/>
+                <!--<bean class="org.zerock.springex.controller.formatter.CheckboxFormatter"/>-->
+            </set>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven  conversion-service="conversionService" />
+</beans>
