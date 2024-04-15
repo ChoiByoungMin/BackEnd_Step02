@@ -6,10 +6,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
     <!--아래의 <bean/> 대신에 애노테이션을 클래스에 옵션으로 주면-->
     <!--   org.zerock.springex.sample 패키지 아래에 있는 모든 클래스를 스캔해서 bean으로 만들어준다.-->
-    <context:component-scan base-package="org.zerock.springex.sample"></context:component-scan>
-<!--    <bean class="org.zerock.springex.sample.SampleDAO"></bean>-->
-
-<!--    <bean class="org.zerock.springex.sample.SampleService"></bean>>-->
 
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>

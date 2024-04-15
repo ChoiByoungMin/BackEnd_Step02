@@ -66,7 +66,7 @@
                             <div class="my-4">
                                 <div class="float-end">
                                     <button type="submit" class="btn btn-primary">Submit</button>
-                                    <!--<button type="result" class="btn btn-secondary">Reset</button>-->
+                                    <button type="result" class="btn btn-secondary">Reset</button>
                                 </div>
                             </div>
                         </form>
