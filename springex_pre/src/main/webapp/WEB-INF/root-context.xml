@@ -4,12 +4,13 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
-    <!--아래의 <bean/> 대신에 애노테이션을 클래스에 옵션으로 주면-->
-    <!--   org.zerock.springex.sample 패키지 아래에 있는 모든 클래스를 스캔해서 bean으로 만들어준다.-->
-    <context:component-scan base-package="org.zerock.springex.sample"></context:component-scan>
-<!--    <bean class="org.zerock.springex.sample.SampleDAO"></bean>-->
 
-<!--    <bean class="org.zerock.springex.sample.SampleService"></bean>>-->
+<!--    아래의 <bean/> 대신에 애노테이션을 클래스에 옵션으로 주면-->
+<!--    org.zerock.springex.sample 패키지 아래에 있는 모든 클래스를 스캔해서 bean으로 만들어준다.-->
+    <context:component-scan base-package="org.zerock.springex.sample"/>
+
+<!--    <bean class="org.zerock.springex.sample.SampleDAO"/>-->
+<!--    <bean class="org.zerock.springex.sample.SampleService"/>-->
 
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
@@ -32,9 +33,9 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="mapperLocations" value="classpath:/mappers/**/*.xml"></property>
+        <property name="mapperLocations" value="classpath:/mappers/**/*.xml"/>
     </bean>
 
-    <!-- mybatis 는 아래 경로를 scan하면 그 부분에 sql 사용하는 인터페이스가 있다.-->
+    <!--    mybatis는 아래 경로를 scan하면 그 부분에 sql사용하는 인터페이스가 있다.-->
     <mybatis:scan base-package="org.zerock.springex.mapper"></mybatis:scan>
 </beans>

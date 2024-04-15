@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Qualifier("event")
 //@Primary
-public class EventSampleDAOImpl implements SampleDAO {
+public class EventSampleDAOImpl implements SampleDAO{
 }

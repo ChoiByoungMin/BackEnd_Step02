@@ -15,18 +15,17 @@ public class TimeMapperTests {
     @Autowired(required = false)
     private TimeMapper timeMapper;
 
-    @Test
-    public void testGetTime() {
+    @Autowired(required = false)
+    private TimeMapper2 timeMapper2;
 
+    @Test
+    public void testGetTime(){
         log.info(timeMapper.getTime());
     }
 
-    @Autowired(required = false)
-
-    private  TimeMapper2 timeMapper2;
-
     @Test
-    public void testNow() {
+    public void testNow(){
         log.info(timeMapper2.getNow());
     }
+
 }

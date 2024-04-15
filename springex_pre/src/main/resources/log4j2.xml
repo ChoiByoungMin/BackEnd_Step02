@@ -14,6 +14,14 @@
             <appender-ref ref="console" />
         </logger>
 
+        <logger name="org.mybatis" level="INFO" additivity="false">
+            <appender-ref ref="console" />
+        </logger>
+
+        <logger name="com.zaxxer" level="INFO" additivity="false">
+            <appender-ref ref="console"/>
+        </logger>
+
         <logger name="org.zerock" level="INFO" additivity="false">
             <appender-ref ref="console" />
         </logger>

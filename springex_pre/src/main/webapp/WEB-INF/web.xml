@@ -4,38 +4,38 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-<!--    ContextLoaderListener가 먼저 호출되고, 그 다음에 DisptcherServlet이 호출된다.-->
-<!--    그러므로 root-context.xml의 bean들이 먼저 생성되고, servlet-context.xml이 그 다음으로 bean이 생성된다.-->
+    <!-- ContextLoaderListener가 먼저 호출되고, 그 다음에 DispatcherServlet이 호출된다.-->
+    <!-- 그러므로 root-context.xml의 bean들이 먼저 생성되고, servlet-context.xml이 그 다음으로 bean이 생성된다-->
 
-<!--     tomcat이 webApplication을 시작할 때 contextloaderlistener의 내부함수에서 root-context.xml을 읽어서 bean을 생성한다. -->
+    <!--Tomcat이 WebApplication을 시작할 때 ContextLoaderListener의 내부함수에서 root-context.xml을
+    읽어서 bean을 생성한다!-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/root-context.xml</param-value>
     </context-param>
 
-<!--    Tomcat으로부터 시작 이벤트를 수신하면 root-context.xml의 설정에 있는 Bean들을 컨테이너에 생성한다.-->
+    <!-- Tomcat으로부터 시작 이벤트를 수신하면 root-context.xml의 설정에 있는 Bean들을 컨테이너에 생성한다-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-
-<!--    Tomcat을 통해 Web Application이 싫행되면, 무조건 DispatcherServlet을 Tomcat의 객체로 생성한다-->
-<!--    DispatcherServlet은 serclet-context.xml을 읽어서 Spring 컨테이너에 Bean들을 생성한다-->
+    <!--Tomcat을 통해 Web Application이 실행되면, 무조건 DispatcherServlet을 Tomcat의 객체로 생성한다-->
+    <!--DispatcherServlet은 servlet-context.xml을 읽어서 Spring 컨테이너에 Bean들을 생성한다-->
     <servlet>
         <servlet-name>appServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        
+
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/servlet-context.xml</param-value>
         </init-param>
 
-<!--        주소 담당 controller-method가 없을때 예외 처리 설정-->
+        <!-- 주소 담당 Controller-method가 없을 때 예외 처리 설정-->
         <init-param>
             <param-name>throwExceptionIfNoHandlerFound</param-name>
             <param-value>true</param-value>
         </init-param>
-
+        
         <load-on-startup>1</load-on-startup>
     </servlet>
     
@@ -43,4 +43,20 @@
         <servlet-name>appServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
 </web-app>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
