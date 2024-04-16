@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+<body>
+  <div class="login">
+    <h1>
+      <a tabindex="-1" title="비트캠프" href="https://www.daum.net">비트캠프</a>
+    </h1>
+    <!-- role="form" : 부트스트랩의 form요소를 사용
+        .form-group : 부트스트랩의 클래스, <label>, <input>을 묶음
+        .form-control : 화면 너비에 꽉차게 표시
+    -->
+    <form role="form" name="loginform" id="loginform" 
+          action="login.jsp" method="post">
+      <div class="form-group">
+        <label for="user_login">사용자명</label>
+        <input type="text" name="log" id="user_login" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="user_pass">비밀번호</label>
+        <input type="text" name="pwd" id="user_pass" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="rememberme">기억하기</label>
+        <input type="checkbox" id="rememberme" value="forever">
+      </div>
+      <input type="submit" name="wp-submit" id="wp-submit" 
+            class="btn btn-default" value="로그인">
+    </form>
+  </div>
+</body>
+</html>

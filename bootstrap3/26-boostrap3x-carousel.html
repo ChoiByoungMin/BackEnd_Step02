@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    img {
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    .top-slide {
+      margin: 0 auto;
+      width: 920px;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('.carousel').carousel({
+          interval: 1000
+        });      
+    })
+
+  </script>
+</head>
+
+<body>
+  <div class="top-slide">
+    <div class="carousel slide" id="jejuphoto">
+      <ol class="carousel-indicators">
+        <li data-target="#jejuphoto" data-slide-to="0" class="active"></li>
+        <li data-target="#jejuphoto" data-slide-to="1"></li>
+        <li data-target="#jejuphoto" data-slide-to="2"></li>
+        <li data-target="#jejuphoto" data-slide-to="3"></li>
+        <li data-target="#jejuphoto" data-slide-to="4"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images/nara-1.jpg">
+          <div class="carousel-caption">
+            <h4>서귀포 새연교</h4>
+            <p>제주의 봄은 하늘에도, 바다에도 , 심지어 바람끝에도 묻어난다</p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/nara-2.jpg">
+          <div class="carousel-caption">
+            <h4>협제 해수욕장</h4>
+            <p>제주의 봄은 하늘에도, 바다에도 , 심지어 바람끝에도 묻어난다</p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/nara-3.jpg">
+          <div class="carousel-caption">
+            <h4>산굼부리 억새밭</h4>
+            <p>제주의 봄은 하늘에도, 바다에도 , 심지어 바람끝에도 묻어난다</p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/nara-4.jpg">
+          <div class="carousel-caption">
+            <h4>협제 해수욕장</h4>
+            <p>제주의 봄은 하늘에도, 바다에도 , 심지어 바람끝에도 묻어난다</p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/nara-5.jpg">
+          <div class="carousel-caption">
+            <h4>산굼부리 억새밭</h4>
+            <p>제주의 봄은 하늘에도, 바다에도 , 심지어 바람끝에도 묻어난다</p>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="left carousel-control" href="#jejuphoto" data-slide="prev">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="#jejuphoto" data-slide="next">
+        <span class="icon-next"></span>
+      </a>
+    </div>
+  </div>
+</body>
+
+</html>

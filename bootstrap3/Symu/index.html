@@ -1,0 +1,192 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet" type="text/css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>		
+		<!-- 헤더 -->
+		<div class="header" id="home">
+			<div class="menu-top-home">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-3">
+							<a href="http://symu.co" class="logo">
+								<img src="https://symu.co/app/plugins/wp/resources/img/logo-small-white.png">
+							</a>
+						</div>
+						<div class="col-sm-9 align-right">
+							<ul class="menu-links">
+								<li class="hidden-xs"><a href="#home">Home</a></li>
+								<li class="hidden-xs"><a href="#features">Features</a></li>
+								<li class="hidden-xs"><a href="#">Freebies</a></li>
+								<li><a href="#loginModal" role="button" data-toggle="modal" class="btn-link">Log In</a></li>
+								<li><a href="#registerModal" role="button" data-toggle="modal" class="btn-danger">Sign Up</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="menu-top-home-fixed hidden-xs"> 
+				<div class="container">				
+					<div class="row">
+						<div class="col-xs-3">
+							<a href="http://symu.co" class="logo">
+								<img src="https://symu.co/app/plugins/wp/resources/img/logo-small-black.png">
+							</a>
+						</div>
+						<div class="col-xs-9 align-right">
+							<ul class="menu-links">
+								<li><a href="#home">Home</a></li>
+								<li><a href="#features">Features</a></li>
+								<li><a href="#">Freebies</li>
+								<li><a href="#loginModal" role="button" data-toggle="modal" class="btn-link hidden-xs">Log In</a></li>
+								<li><a href="#registerModal" role="button" data-toggle="modal" class="btn-danger hidden-xs">Sign Up</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container align-center">
+				<h1><strong>Display your web design</strong><br>in a web browser</h1>
+				<h4 class="silver hidden-xs">Fastest way to present your design and get feedback from your clients!</h4>
+				<div class="uploader-box box-padding-big-top">
+					<div class="btn-group">
+						<span class="btn btn-primary fileinput-button btn-lg">
+							<span>Upload Project</span>
+							<input id="fileupload" type="file" name="files[]">
+						</span>
+					</div>
+					<div id="progress" class="progress">
+						<div class="progress-bar progress-bar-danger"></div>
+					</div>
+					<div id="files" class="files"></div>
+				</div>
+				<div class="silver small-info margin-top-big hidden-xs">
+					<img src="images/drop-icon.png">
+					Drop here or select your project<br>
+					prepared in the PNG or JPG format
+				</div>
+			</div>
+		</div>
+		
+		<div class="box-padding-big" id="features">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-5 info-big">
+						<h2>Fastest way to<br><strong>present your design</strong></h2>
+						<p>Symu is an easy to use tool for web designers. With the help of our system you can present your projects in a browser for free. It is all very easy!</p>
+						<p><strong>Drop your project anywhere</strong><br>Symu will prepare a mockup of your website for you!</p>
+					</div>
+					<div class="col-sm-7">
+						<img src="images/symu-panel-1.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box-padding-big white-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-7">
+						<img src="images/symu-panel-2.png">
+					</div>
+					<div class="col-sm-5 info-bg">
+						<h2>The simplest way to<br><strong>get feedback from your clients!</strong></h2>
+						<p><strong>You can add a comment anywhere</strong> on a project, this is a fast and easy way to gather input and proposed changes from your client. Click anywhere on a project and leave your thoughts.</p>
+						<p><strong>Every added comment becomes a task! </strong> Thanks to this solution you can easily mark the changes you have made.</p>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<div class="box-padding-big hidden-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-5 info-big">
+						<h2>Support for<br><strong>Responsive projects</strong></h2>
+						<p>Projects added to Symu are automatically checked whether they are mobile ready.</p>
+						<p>The program will divide your files into responsive versions on its own! You have the option to view the projects in either normal or responsive modes!</p>
+					</div>
+					<div class="col-sm-7">
+						<img src="images/home-panel-3.jpg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box-padding-big white-bg hidden-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<img src="images/envelope-icon.jpg" style="float:left">
+						<h2 class="icon-title">Email<br><strong>notifications</strong></h2>
+						<p>An email notification will be sent when your client comments or opens a project. You will know when a client recieves the projects and if he has seen it!</p>
+					</div>
+					<div class="col-sm-6">
+						<img src="images/lock-icon.jpg" style="float:left">
+						<h2 class="icon-title">Project<br><strong>protection</strong></h2>
+						<p>Your projects will be perfectly safe, Symu uses SSL encryption and every project added receives a unique link. Additionally you have the option to secure your project with a password.</p>					
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box-padding-big dark-bg-stat hidden-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2 hidden-xs">
+						<div class="info-box align-center">
+							<h3>253</h3>
+							Todays uploads
+						</div>
+					</div>
+					<div class="col-sm-2 hidden-xs">
+							<div class="info-box align-center">
+							<h3>171092</h3>
+							Projects uploaded
+						</div>
+					</div>
+					<div class="col-sm-4 align-center">
+						<a href="#registerModal" role="button" data-toggle="modal" class="btn btn-danger btn-lg">Sign Up <strong>now</strong></a>
+					</div>
+					<div class="col-sm-2 hidden-xs">
+						<div class="info-box align-center">
+							<h3>931523</h3>
+							Project views
+						</div>
+					</div>
+					<div class="col-sm-2 hidden-xs">
+						<div class="info-box align-center">
+							<h3>100867</h3>
+							Comments posted
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dark-footer">
+			<footer>
+				The site owner is not responsible for uploaded images. You can only upload images for which you own the copyright.<br>
+				Symu uses "Cookies" for stats | <a href="https://symu.co/terms/">Terms of service</a> | Contact: <a href="mailto:contact@symu.co">contact@symu.co</a>
+			</footer>
+		</div>
+		<script src="js/jquery-2.1.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+			<script>
+				$(function() {
+					$(window).scroll(function(e) {
+						if ($(this).scrollTop() > 750) {
+							$(".menu-top-home-fixed").css("margin-top", "0px");
+						} else {
+							$(".menu-top-home-fixed").css("margin-top", "-78px");
+						}
+					});
+				});
+
+			</script>		
+	</body>
+</html>
