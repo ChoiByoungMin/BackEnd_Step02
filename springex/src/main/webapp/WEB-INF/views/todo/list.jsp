@@ -100,7 +100,11 @@
 <%--                                            <c:out value="${dto.title}"/>--%>
 <%--                                        </a>--%>
 <%--                                    </td>--%>
-                                    <td><c:out value="${dto.title}"/> </td>
+                                    <td>
+                                        <a href="/todo/read?tno=${dto.tno}" class="text-decoration-none" data-tno="${dto.tno}" >
+                                            <c:out value="${dto.title}"/>
+                                        </a>
+                                    </td>
                                     <td><c:out value="${dto.writer}"/></td>
                                     <td><c:out value="${dto.dueDate}"/></td>
                                     <td><c:out value="${dto.finished}"/></td>
