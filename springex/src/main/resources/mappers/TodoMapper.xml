@@ -27,11 +27,42 @@
         update tbl_todo set title = #{title}, dueDate = #{dueDate}, finished = #{finished} where tno = #{tno}
     </update>
 
+    <sql id="search">
+        <where>
+            <if test="types != null and types.length > 0">
+                <foreach collection="types" item="type" open="(" close=")" separator=" OR">
+                    <if test="type == 't'.toString()" >
+                        title like concat('%',#{keyword}, '%')
+                    </if>
+                    <if test="type == 'w'.toString()">
+                        writer like concat('%',#{keyword},'%')
+                    </if>
+                </foreach>
+            </if>
+
+            <if test="finished">
+                <trim prefix="and">
+                    finished = 1
+                </trim>
+            </if>
+
+            <if test="from != null and to != null">
+                <trim prefix="and">
+                    dueDate between #{from} and #{to}
+                </trim>
+            </if>
+        </where>
+    </sql>
+
     <select id="selectList" resultType="org.zerock.springex.domain.TodoVO">
-        select * from tbl_todo order by tno DESC limit #{skip}, #{size}
+        select * from tbl_todo
+        <include refid="search"></include>
+        order by tno DESC limit #{skip}, #{size}
     </select>
 
     <select id="getCount" resultType="int">
         select count(tno) from  tbl_todo
+        <include refid="search"></include>
     </select>
+
 </mapper>

@@ -110,29 +110,29 @@
 
                         const formObj = document.querySelector("form")
 
+                        // document.querySelector(".btn-danger").addEventListener("click",function(e) {
+                        //
+                        //     e.preventDefault()
+                        //     e.stopPropagation()
+                        //
+                        //     formObj.action ="/todo/remove"
+                        //     formObj.method ="post"
+                        //
+                        //     formObj.submit()
+                        //
+                        // },false);
+
                         document.querySelector(".btn-danger").addEventListener("click",function(e) {
 
                             e.preventDefault()
                             e.stopPropagation()
 
-                            formObj.action ="/todo/remove"
+                            formObj.action =`/todo/remove?${pageRequestDTO.link}`
                             formObj.method ="post"
 
                             formObj.submit()
 
                         },false);
-
-                        <%--document.querySelector(".btn-danger").addEventListener("click",function(e) {--%>
-
-                        <%--    e.preventDefault()--%>
-                        <%--    e.stopPropagation()--%>
-
-                        <%--    formObj.action =`/todo/remove?${pageRequestDTO.link}`--%>
-                        <%--    formObj.method ="post"--%>
-
-                        <%--    formObj.submit()--%>
-
-                        <%--},false);--%>
 
 
                         document.querySelector(".btn-primary").addEventListener("click",function(e) {
