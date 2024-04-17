@@ -45,16 +45,26 @@ public class PageResponseDTO<E> {
         this.total = total;
         this.dtoList = dtoList;
 
+        // 내 page 번호에 따라 pagination의 끝번호를 구하고 -9를 해주면 시작번호를 구할 수 있다.
+        // 10은 pagination의 범위이다.
         this.end = (int)(Math.ceil(this.page / 10.0 )) * 10;
 
         this.start = this.end - 9;
 
+        // pagination의 가장 끝 번호
         int last = (int)(Math.ceil((total/(double)size)));
 
+        /* 위에서 end계산은 10단위로 무조건 맞춘 것이기 때문에
+        실제 마지막 페이지 번호와 확인 해서
+        마지막 페이지인 경우는 end > last보다 크게 되므로
+        end = last로 해줘야
+        마지막 페이지인 경우 pagination이 알맞게 나오게 된다.
+        * */
         this.end = end > last ? last : end;
 
         this.prev = this.start > 1;
 
+        // 현재 pagination 이 보여주는 범위가 마지막이 아니므로 다음페이지가 존재
         this.next = total > this.end * this.size;
     }
 }
