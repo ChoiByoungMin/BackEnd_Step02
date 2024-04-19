@@ -109,8 +109,27 @@ public class BoardSearchImpl extends QuerydslRepositorySupport implements BoardS
 
         List<Board> list = query.fetch();
 
+        /*
+        SELECT COUNT(bno)
+         FROM board
+         WHERE (
+                title LIKE '%1%'
+                OR content LIKE '%1%'
+                OR writer LIKE '%1%'
+            )
+            AND bno > 0L
+         ORDER BY bno DESC limit 1, 10;
+        * */
         long count = query.fetchCount();
 
+        /*
+        * list: 실제 row 리스트들
+        * pageable: 페이지 처리 필요정보
+        * count: 전체 row 갯수
+        *
+        * 페이징 처리하려면 이것들이 모두 필요하므로 묶어서 넘기려고
+           Page<E>를 상속받은 PageImpl<E> 클래스를 만들어 놓은 것이다.
+        * */
         return new PageImpl<>(list, pageable, count);
 
     }
