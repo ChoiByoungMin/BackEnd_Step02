@@ -8,6 +8,9 @@ import org.zerock.b01.domain.Reply;
 
 public interface ReplyRepository extends JpaRepository<Reply, Long> {
 
+    /*
+    * JPQL의 : bno에는 아래 listOfBoard의 매개변수값인 Long bno값이 전달된다.
+    * */
     @Query("select r from Reply r where r.board.bno = :bno")
     Page<Reply> listOfBoard(Long bno, Pageable pageable);
 }
